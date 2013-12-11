@@ -1,0 +1,14 @@
+<select onchange="if (this.value) window.location.href=this.value">
+  <option value="">Navigate the docs…</option>
+  {% for section in site.data.docs_toc %}
+    <optgroup label="{{ section[0] }}">
+      {% for item in section[1] %}
+        {% for p in site.pages %}
+          {% if p.url == item %}
+            <option value="{{ site.url }}{{ p.url }}">{{ p.title }}</option>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </optgroup>
+  {% endfor %}
+</select>

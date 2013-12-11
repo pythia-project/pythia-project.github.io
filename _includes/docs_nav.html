@@ -1,0 +1,41 @@
+{% assign prev = null %}
+{% assign next = null %}
+{% assign found = false %}
+{% for section in site.data.docs_toc %}
+  {% for item in section[1] %}
+    {% if found %}
+      {% assign next = item %}
+      {% break %}
+    {% elsif item == page.url %}
+      {% assign found = true %}
+    {% else %}
+      {% assign prev = item %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% unless found %}
+  {% assign prev = null %}
+{% endunless %}
+
+<div class="section-nav">
+  <div class="left align-right">
+    {% if prev != null %}
+      <a href="{{ site.url }}{{ prev }}" class="prev">
+        Back
+      </a>
+    {% else %}
+      <span class="prev disabled">Back</span>
+    {% endif %}
+  </div>
+  <div class="right align-left">
+    {% if next != null %}
+      <a href="{{ site.url }}{{ next }}" class="next">
+        Next
+      </a>
+    {% else %}
+      <span class="next disabled">Next</span>
+    {% endif %}
+  </div>
+  <div class="clear"></div>
+</div>
+

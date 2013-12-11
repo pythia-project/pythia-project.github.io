@@ -1,0 +1,26 @@
+<aside>
+
+  {% for section in site.data.docs_toc %}
+
+    <h4>{{ section[0] }}</h4>
+
+    <ul>
+    {% for item in section[1] %}
+      {% if item == page.url %}
+        {% assign c = 'current' %}
+      {% else %}
+        {% assign c = '' %}
+      {% endif %}
+
+      {% for p in site.pages %}
+        {% if p.url == item %}
+          <li class="{{ c }}"><a href="{{ site.url }}{{ p.url }}">{{ p.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+
+    {% endfor %}
+    </ul>
+
+  {% endfor %}
+
+</aside>
