@@ -334,7 +334,6 @@ aside li.current a:before {
 
 /* Code Highlighting */
 
-
 pre, code {
   white-space: pre;
   display: inline-block;
@@ -658,4 +657,21 @@ td p code {
     margin: 0 -40px;
     padding: 0 10px;
   }
+}
+
+/* Figures */
+
+figure {
+  text-align: center;
+  border-top: 1px dotted #888a85;
+  border-bottom: 1px dotted #888a85;
+  padding: 10px;
+  margin: 1em 0;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 80%;
+  color: #888a85;
+  margin: 0 2em;
 }
