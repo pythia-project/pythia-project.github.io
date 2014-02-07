@@ -11,7 +11,7 @@ to run on a Linux kernel too.
 
 The following prerequisites are also needed:
 * [Go][] 1.1 or later
-* [GNU Make][]
+* [GNU Make][] 4.0 or later
 * A 32-bit C toolchain
 * [Squashfs][] tools 4.2 or later
 * wget
@@ -33,7 +33,7 @@ git clone {{ site.repository }}.git
 Once your clone is set up, go inside the new directory and run
 
 {% highlight bash %}
-devtools/gitsetup.sh
+devtools/git-setup.sh
 {% endhighlight %}
 
 This will install some git hooks to check the code style before a commit.
